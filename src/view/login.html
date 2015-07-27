@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			html,body{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				background: rgb(249, 249, 247);
+			}
+			.login-box{
+				width: 450px;
+				height: 230px;
+				margin:  10% auto;
+				border: 1px solid rgb(225, 225, 225);
+				border-radius: 8px;
+			}
+			.login-box h2{
+				font-size: 20px;
+				color: rgb(92, 99, 113);
+				margin-top: 8px;
+				position:relative;
+				text-align: center;
+				line-height: 40px;
+				
+			}
+			
+			.login{
+				width: 100%;
+				text-align: center;
+				padding-top: 0px;
+			}
+			.login div{
+				margin-top: 15px;
+			}
+			.login label{
+				font-size: 18px;
+				letter-spacing: 4px;
+			}
+			.login input{
+				border: 1px solid #999;
+				background: #FFF;
+				height: 28px;
+				width: 50%;
+				border-radius: 4px;
+				margin-left: 5px;
+			}
+			.btn{
+				font-size: 16px;
+				line-height: 30px;
+				background: rgb(105, 116, 107);
+				border: none;
+				padding-left: 20px;
+				padding-right: 20px;
+				color: #FFF;
+				cursor: pointer;
+			}
+			#login-in {
+			  width: 100px;
+			  height: 30px;
+			 
+			}
+
+		/* 	.login-box h2:after{
+			content: "";
+			width: 90%;
+			height: 2px;
+			background: black;
+			opacity: 0.45;
+			position: absolute;
+			left: 5%;
+			bottom: -1px;
+		} */
+		</style>
+	</head>
+	<body>
+		<div class="login-box">
+			<h2>Manager System</h2>
+			<div class="login">
+				<form action="/in" method="post">
+					<div>
+						<input type="text" name="name"/>
+					</div>
+					<div>
+						<input type="password" name="pwd"/>
+					</div>
+					<div>
+						<input type="submit" id="login-in" value="Sign In">
+					</div>
+				</form>
+			</div>
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+<meta charset="utf-8" />
+<title>刘阳的个人博客</title>
+        <meta name="keywords" content="88250"/>
+        <meta name="description" content="刘阳的个人博客"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="刘阳的个人博客" />
+<meta name="generator" content="Solo" />
+<meta name="owner" content="B3log Team" />
+<meta name="revised" content="刘阳的个人博客, 2015" />
+<meta name="copyright" content="leiwesBlog" />
+<meta http-equiv="Window-target" content="_top" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+<link type="text/css" rel="stylesheet" href="http://solo.b3log.org:80/skins/finding/css/finding.min.css?20150331" charset="utf-8" />
+<link href="http://88250.b3log.org:80/blog-articles-feed.do" title="ATOM" type="application/atom+xml" rel="alternate" />
+<!-- <link rel="icon" type="image/png" href="http://solo.b3log.org:80/favicon.png" /> -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?be2bcb3d215a3d3842149cbb23c14dbb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    </head>
+    <body class="nav-closed">
+        <div class="nav">
+<div class="fn-clear">
+    <span class="fn-right">
+                <a title="登录" href="/login?goto=http%3A%2F%2F88250.b3log.org%3A80%2Fadmin-index.do%23main" class="icon-login"></a>
+        &nbsp; 
+        <a href="http://88250.b3log.org:80/register" title="注册" class="icon-register"></a>
+    </span>
+</div>
+<ul>
+    <li>
+        <a href="http://88250.b3log.org:80/about" target="_self">关于</a>
+    </li>
+    <li>
+        <a href="http://88250.b3log.org:80/dynamic.html">动态</a>
+    </li>
+    <li>
+        <a href="http://88250.b3log.org:80/tags.html">标签墙</a>
+    </li>
+    <li>
+        <a href="http://88250.b3log.org:80/archives.html">存档</a>
+    </li>
+    <li>
+        <a href="http://88250.b3log.org:80/links.html">友情链接</a>
+    </li>
+    <li>
+        <a rel="alternate" href="http://88250.b3log.org:80/blog-articles-rss.do">订阅</a>
+    </li>
+</ul>
+
+<div class="count">
+    <span>
+        浏览次数：
+        1,661,261
+    </span> &nbsp; &nbsp;
+    <span>
+        文章总数：
+        1,773
+    </span><br/>
+    <span>
+        评论总数：
+        978
+    </span> &nbsp; &nbsp;
+    <span>
+        当前访客：
+        18
+    </span>
+</div>
+        </div>
+        <div class="site-wrapper">
+<header class="main-header">
+        <div class="fn-clear">
+        <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+    </div>
+    <div class="fn-vertical">
+        <div class="main-header-content fn-wrap">
+            <h1 class="page-title">
+                <a href="http://88250.b3log.org:80">刘一阳的个人博客</a>
+                <small class="page-description"> &nbsp; Java/Go/Linux</small>
+            </h1>
+            <h2 class="page-description"></h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"></a>
+</header>            <main id="content">
+
+
+
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/optimizing-concurrent-map-access-in-go-chinese">
+                优化 Go 中的 map 并发存取
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>本文分析了一个 Golang 开源项目中关于 map 使用的实现细节，介绍了并发存取 map 的关键点，并由浅入深地讲述了他们的优化过程，最后给出了正确并发存取 map 的一种实现方式。</p></p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/golang">
+                golang</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Concurrent">
+                Concurrent</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Map">
+                Map</a>
+        </span>
+        <time>2015-04-02</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/docker-inspect-template-magic-chinese">
+                奇妙的 Docker Inspect 模版
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>很多 Docker 用户都知道&nbsp;<em>docker inspect</em>&nbsp;命令，该命令用于获取容器/镜像的元数据，其中&nbsp;<em>-f</em>&nbsp;参数可以用于获取指定的数据，例如使用&nbsp;<em>docker inspect -f {{.IPAddress}}</em>&nbsp;来获取容器的 IP 地址。不过很多用户容易被该特性的语法搞晕，并很少有人能将它的优势发挥出来（大部分人都是通过&nbsp;<em>grep</em>&nbsp;来获取指定数据，虽然有效但比较零散混乱）。本文将详细介绍&nbsp;<em>-f</em>&nbsp;参数，并给出一些例子来说明如何使用它。</p></p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Translation">
+                Translation</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Inspect">
+                Inspect</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Template">
+                Template</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/%E6%A8%A1%E7%89%88">
+                模版</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Docker">
+                Docker</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/golang">
+                golang</a>
+        </span>
+        <time>2015-03-31</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/b3log-solo-068-released">
+                Java 开源博客 —— Solo 0.6.8 正式版发布了！
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>Java 开源博客 &mdash;&mdash;&nbsp;<a href="https://github.com/b3log/b3log-solo" target="_blank">Solo</a>&nbsp;0.6.8 正式版发布了，欢迎大家<a href="http://pan.baidu.com/share/link?shareid=541735&amp;uk=3255126224" target="_blank">下载</a>。另外，欢迎观摩我们的另一个产品，在线 Golang IDE&mdash;&mdash;<a href="https://wide.b3log.org" target="_blank">Wide</a>！</p></p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Open%20Source">
+                Open Source</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/B3log%20Solo">
+                B3log Solo</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Java">
+                Java</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Life%20in%20Programming">
+                Life in Programming</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/B3log%20Announcement">
+                B3log Announcement</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/B3log">
+                B3log</a>
+        </span>
+        <time>2015-03-25</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/golang-by-example">
+                Golang 基础代码示例
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>Golang 基础代码示例。</p>
+</p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/golang">
+                golang</a>
+        </span>
+        <time>2015-03-06</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/golang-mysql-LOAD-DATA-LOCAL-INFILE">
+                Golang MySQL LOAD DATA LOCAL INFILE 使用
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>在往 MySQL 写入大量数据时直接 insert 效率太低，应该使用 MySQL 的 LOAD DATA LOCAL INFILE。</p>
+</p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/golang">
+                golang</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/MySQL">
+                MySQL</a>
+        </span>
+        <time>2015-03-03</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/wide-1.2.0-released">
+                基于 Web 的 Go 语言 IDE - Wide 1.2.0 发布！
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>我们在 Wide 1.2.0 中加入了 <a href="https://wide.b3log.org/playground">Playground</a>，方便代码分享，并支持通过 iframe 内嵌到其他站点运行 Go 代码。</p>
+</p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Life%20in%20Programming">
+                Life in Programming</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/B3log">
+                B3log</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Wide">
+                Wide</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/golang">
+                golang</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/B3log%20Announcement">
+                B3log Announcement</a>
+        </span>
+        <time>2015-03-01</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/delivery-necessaries">
+                待产必需品列表
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>月初的时候老婆生产，出院后整理了那几天在医院用到的待产物品列表，希望能帮助到其他宝妈、奶爸。</p>
+</p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Life%20in%20Programming">
+                Life in Programming</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/%E5%BE%85%E4%BA%A7">
+                待产</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/%E5%BE%85%E4%BA%A7%E5%8C%85">
+                待产包</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/%E5%88%86%E5%A8%A9">
+                分娩</a>
+        </span>
+        <time>2015-02-19</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/golang-playground-in-wide">
+                Wide 新特性 —— Playground
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>Wide 发布了一个新特性——Playground：<a href="https://wide.b3log.org/playground">https://wide.b3log.org/playground</a></p>
+
+<ul>
+<li>类似 golang 官方的 <a href="http://play.golang.org">http://play.golang.org</a></li>
+<li>有语法高亮、自动完成</li>
+<li>通过 WebSocket 实时运行输出</li>
+<li>能够非常方便的通过 iframe 嵌入到其他网站中</li>
+</ul>
+</p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/golang">
+                golang</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Wide">
+                Wide</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/B3log%20Wide">
+                B3log Wide</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Playground">
+                Playground</a>
+        </span>
+        <time>2015-02-17</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/golang-get-user-home-dir">
+                Golang 获取用户 home 目录路径
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>一般情况下我们可以使用 <code>os/user</code> 包提供的 <code>Current()</code> 函数来获取用户信息，但这个方式不支持跨平台，所以我们需要进行一点增强。</p>
+</p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/golang">
+                golang</a>
+        </span>
+        <time>2015-02-16</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/java-web-framework-dev-fundamentals">
+                Java Web 框架开发基础
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>本文介绍了 Java Web 框架开发基础，适合自己造轮子的同学阅读。</p>
+</p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Framework">
+                Framework</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Java">
+                Java</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Servlet">
+                Servlet</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Web">
+                Web</a>
+        </span>
+        <time>2015-02-10</time>
+    </footer>
+</article>
+<article class="post fn-wrap">
+    <header>
+        <h2 class="post-title">
+            <a rel="bookmark" href="http://88250.b3log.org:80/life-2014">
+                毕业后第一个五年
+            </a>
+        </h2>
+    </header>
+    <section class="post-excerpt fn-clear">
+        <p><p>新生命、Ideas、开源、音乐、书、感悟、五年。</p>
+</p>
+    </section>
+    <footer class="post-meta">
+        <img class="avatar" title="88250" alt="88250" src="http://gravatar.duoshuo.com/avatar/59a5e8209c780307dbe9c9ba728073f5?s=60"/>
+        <a rel="nofollow" href="http://88250.b3log.org:80/authors/1292946870500">88250</a>
+        on
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Annual%20Summary">
+                Annual Summary</a>,
+        </span>
+        <span>
+            <a rel="tag" href="http://88250.b3log.org:80/tags/Life%20in%20Programming">
+                Life in Programming</a>
+        </span>
+        <time>2015-01-23</time>
+    </footer>
+</article>
+
+<nav class="pagination fn-clear fn-wrap" role="navigation">
+    <span>页面 1 of 119</span>
+    <a class="fn-right" href="http://88250.b3log.org:80/2">下一页 →</a>
+</nav>
+            </main>
+<footer class="site-footer fn-clear">
+    <a href="http://88250.b3log.org:80">丁亮的个人博客</a> 
+    &copy; 2015
+
+    <span class="fn-right">
+        Powered by
+        <a href="http://b3log.org" target="_blank">
+            B3log
+        </a>,
+        ver 0.6.9&nbsp;&nbsp;
+        Theme by <a rel="friend" href="http://vanessa.b3log.org" target="_blank">Vanessa</a>.
+    </span>
+</footer>
+<script type="text/javascript" src="http://solo.b3log.org:80/js/lib/jquery/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://solo.b3log.org:80/js/common.min.js?20150331" charset="utf-8"></script>
+<script type="text/javascript" src="http://solo.b3log.org:80/skins/finding/js/finding.min.js?20150331" charset="utf-8"></script>
+<script type="text/javascript">
+    var latkeConfig = {
+        "servePath": "http://88250.b3log.org:80",
+        "staticServePath": "http://solo.b3log.org:80",
+        "isLoggedIn": "false",
+        "userName": ""
+    };
+
+    var Label = {
+        "skinDirName": "finding",
+        "em00Label": "微笑",
+        "em01Label": "大笑",
+        "em02Label": "高兴",
+        "em03Label": "悲伤",
+        "em04Label": "哭泣",
+        "em05Label": "无语",
+        "em06Label": "烦躁",
+        "em07Label": "生气",
+        "em08Label": "我瞅",
+        "em09Label": "惊讶",
+        "em10Label": "酷",
+        "em11Label": "顽皮",
+        "em12Label": "爱心",
+        "em13Label": "心碎",
+        "em14Label": "魔鬼"
+    };
+</script>
+<script type="text/javascript">
+    (function () {
+        var $groups =  $("a[rel=group]"),
+        $fancybox = $(".fancybox");
+        if ($groups.length > 0 || $fancybox.length > 0) {
+            if (document.createStyleSheet) {
+                document.createStyleSheet("http://solo.b3log.org:80/plugins/fancybox/js/jquery.fancybox.css");
+            } else {
+                $("head").append($("<link rel='stylesheet' href='http://solo.b3log.org:80/plugins/fancybox/js/jquery.fancybox.css' type='text/css' charset='utf-8' />"));
+            } 
+            
+            $.ajax({
+                url: "http://solo.b3log.org:80/plugins/fancybox/js/jquery.fancybox.pack.js",
+                dataType: "script",
+                cache: true,
+                complete: function() {
+                    $groups.fancybox({
+                        openEffect  : 'none',
+                        closeEffect : 'none',
+                        prevEffect : 'none',
+                        nextEffect : 'none'
+                    });
+                    $fancybox.fancybox({
+                        openEffect  : 'none',
+                        closeEffect : 'none',
+                        prevEffect : 'none',
+                        nextEffect : 'none'
+                    });
+                }
+            });
+        }
+    })();
+</script>
+
+        </div>
+    <div style='display: none;'>Copyright (c) 2009-2015, <a href='http://b3log.org'>b3log.org</a></div>
+    </body>
+</html>
